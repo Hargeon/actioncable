@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ActionChat</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div>
+      <% if cookies.signed[:user_id] %>
+        <%= link_to 'Log out', session_path(cookies.signed[:user_id]), method: :delete, data: { confirm: 'Are yor sure?' } %>
+      <% else %>
+        <%= link_to 'Log in', new_session_path %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<h1>NEW</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to 'Back', root_path %>
+</div>
